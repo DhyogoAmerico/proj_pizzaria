@@ -99,9 +99,10 @@ Container _buildGridCardapio(BuildContext context, String nome, String img,
               child: Text(
                 '$nome',
                 style: TextStyle(
-                  fontSize: 17,
+                  fontSize: 20,
                   color: Colors.black,
                 ),
+                textAlign: TextAlign.center,
               ),
               onPressed: () {
                 showDialogGrid(context, nome, img, descricao, valor);
@@ -125,6 +126,9 @@ Future<void> showDialogGrid(BuildContext context, String nome, String img,
           titlePadding: EdgeInsets.only(top: 20, bottom: 15),
           title: Text(
             '$nome',
+            style: TextStyle(
+              fontSize: 22,
+            ),
             textAlign: TextAlign.center,
           ),
           children: [
@@ -132,15 +136,23 @@ Future<void> showDialogGrid(BuildContext context, String nome, String img,
               children: [
                 Image.asset(
                   'images/$img',
-                  width: 250,
+                  width: 270,
                 ),
-                Container(
-                  padding: EdgeInsets.fromLTRB(8, 20, 8, 10),
-                  child: Text(
-                    '$descricao',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 20,
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Container(
+                    padding: EdgeInsets.fromLTRB(6, 10, 6, 10),
+                    decoration: BoxDecoration(
+                      border: Border.all(),
+                      borderRadius: BorderRadius.all(Radius.circular(8)),
+                      color: Colors.yellow,
+                    ),
+                    child: Text(
+                      '$descricao',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 23,
+                      ),
                     ),
                   ),
                 ),
@@ -153,14 +165,14 @@ Future<void> showDialogGrid(BuildContext context, String nome, String img,
                         children: [
                           Icon(
                             Icons.monetization_on,
-                            size: 25,
+                            size: 28,
                             color: Colors.red[600],
                           ),
                           Text(
                             "$valor",
                             style: TextStyle(
                                 color: Colors.red[600],
-                                fontSize: 20,
+                                fontSize: 25,
                                 fontWeight: FontWeight.bold),
                           ),
                         ],
@@ -171,7 +183,7 @@ Future<void> showDialogGrid(BuildContext context, String nome, String img,
                       child: Text(
                         'Tam. M',
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 25,
                         ),
                       ),
                     ),
